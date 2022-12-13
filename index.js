@@ -13,8 +13,8 @@ const PORT = 8080;
 
 var forw_num = "+916390376385";
 
-io.set('heartbeat interval', 10000);
-io.set('heartbeat timeout', 20000);
+//io.set('heartbeat interval', 10000);
+//io.set('heartbeat timeout', 20000);
 
 server.listen(process.env.PORT || 8080, function () {
   console.log(`Listening on ${ PORT }`);
