@@ -13,10 +13,10 @@ const PORT = 8080;
 
 var forw_num = "+916390376385";
 
-io = require("socket.io")(server, {
+/*io = require("socket.io")(server, {
   pingTimeout: 20000,
   pingInterval: 10000
-});
+});*/
 
 //io.set('heartbeat interval', 10000);
 //io.set('heartbeat timeout', 20000);
